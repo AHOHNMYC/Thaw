@@ -1,0 +1,32 @@
+name: Ant build CI
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up JDK 11
+      uses: actions/setup-java@v4
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+    - name: Set up junit
+      run: |
+        sudo sh -c "echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/force-unsafe-io"
+        sudo apt-get -qq install junit4 > /dev/null
+    - name: Download dependencies
+      run: |
+        mkdir lib
+        REPO=https://repo1.maven.org/maven2/org
+        wget $REPO/hsqldb/hsqldb/2.7.2/hsqldb-2.7.2.jar -qO lib/hsqldb.jar
+        wget $REPO/bouncycastle/bcprov-lts8on/2.73.4/bcprov-lts8on-2.73.4.jar -qO lib/BouncyCastle.jar
+    - name: Build with Ant
+      run: ant -noinput -buildfile build.xml
+    - name: Upload Thaw.jar
+      uses: actions/upload-artifact@v4
+      with:
+        name: Thaw
+        path: bin/Thaw.jar
