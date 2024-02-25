@@ -237,7 +237,7 @@ public class FreenetURIHelperTest extends TestCase {
 	public static void testGetUSKRevision() throws Exception {
 		for (int i = 0; i < TEST_USK_REV.length ; i++) {
 			int result = FreenetURIHelper.getUSKRevision(TEST_USK_REV[i]);
-			assertEquals(new Integer.valueOf(result), new Integer.valueOf(TEST_USK_REV_RESULTS[i]));
+			assertEquals(Integer.valueOf(result), Integer.valueOf(TEST_USK_REV_RESULTS[i]));
 		}
 	}
 
@@ -283,7 +283,7 @@ public class FreenetURIHelperTest extends TestCase {
 		for (int i = 0; i < TEST_COMPARE_KEYS.length ; i++) {
 			boolean result = FreenetURIHelper.compareKeys(TEST_COMPARE_KEYS[i][0],
 						     TEST_COMPARE_KEYS[i][1]);
-			assertEquals(new Boolean.valueOf(result), new Boolean.valueOf(TEST_COMPARE_KEYS_RESULTS[i]));
+			assertEquals(Boolean.valueOf(result), Boolean.valueOf(TEST_COMPARE_KEYS_RESULTS[i]));
 		}
 	}
 }
