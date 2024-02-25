@@ -21,8 +21,8 @@ jobs:
       run: |
         mkdir lib
         REPO=https://repo1.maven.org/maven2/org
-        wget $REPO/hsqldb/hsqldb/2.7.2/hsqldb-2.7.2.jar -O lib/hsqldb.jar
-        wget $REPO/bouncycastle/bcprov-lts8on/2.73.4/bcprov-lts8on-2.73.4.jar -O lib/BouncyCastle.jar
+        wget $REPO/hsqldb/hsqldb/2.7.2/hsqldb-2.7.2.jar -qO lib/hsqldb.jar
+        wget $REPO/bouncycastle/bcprov-lts8on/2.73.4/bcprov-lts8on-2.73.4.jar -qO lib/BouncyCastle.jar
     - name: Build with Ant
       run: ant -noinput -buildfile build.xml
     - name: Upload Thaw
