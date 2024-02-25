@@ -147,9 +147,7 @@
 			<classpath>
 				<pathelement path="${bin.dir}"/>
 				<pathelement path="${build-test}"/>
-				<fileset dir="${junit.dir}">
-					<include name="**/*.jar" />
-				</fileset>
+				<pathelement location="${junit.location}"/>
 			</classpath>
 
 			<formatter type="plain" usefile="false"/>
