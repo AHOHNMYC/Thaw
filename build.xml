@@ -18,7 +18,7 @@
 
 	<property name="final.dir" value="bin" />
 	
-	<property name="junit.location" value="/usr/share/java/junit.jar"/>
+	<property name="junit.location" value="/usr/share/java/junit4.jar"/>
 	<available file="${junit.location}" property="junit_available"/>
 
 	<!-- HSQLDB -->
@@ -134,7 +134,7 @@
 		<javac srcdir="${test}" destdir="${build-test}" debug="on" optimize="on" source="${source-version}" target="${target-version}" includeantruntime="false">
 			<classpath>
 				<pathelement path="${bin.dir}"/>
-				<pathelement path="/usr/share/java/"/>
+				<pathelement location="${junit.location}"/>
 			</classpath>
 			<compilerarg value="-Xlint"/>
 			<include name="**/*.java"/>
