@@ -16,7 +16,7 @@ jobs:
     - name: Set up junit
       run: |
         sudo sh -c "echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/force-unsafe-io"
-        sudo apt-get -qq install junit > /dev/null
+        sudo apt-get -qq install junit4 > /dev/null
     - name: Download dependencies
       run: |
         mkdir lib
