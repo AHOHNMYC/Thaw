@@ -38,7 +38,7 @@ import org.bouncycastle.crypto.generators.*;
 import org.bouncycastle.crypto.params.*;
 import org.bouncycastle.crypto.signers.*;
 import org.bouncycastle.jce.provider.*;
-import org.bouncycastle.util.encoders.*;
+//import org.bouncycastle.util.encoders.*;
 
 /**
  * Implementation of the crypto layer.
