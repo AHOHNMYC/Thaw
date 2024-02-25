@@ -18,7 +18,7 @@
 
 	<property name="final.dir" value="bin" />
 	
-	<property name="junit.location" value="${lib.dir}/junit.jar"/>
+	<property name="junit.location" value="/usr/share/java/junit.jar"/>
 	<available file="${junit.location}" property="junit_available"/>
 
 	<!-- HSQLDB -->
