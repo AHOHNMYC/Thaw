@@ -133,8 +133,8 @@
 
 		<javac srcdir="${test}" destdir="${build-test}" debug="on" optimize="on" source="${source-version}" target="${target-version}" includeantruntime="false">
 			<classpath>
-				<path path="${bin.dir}"/>
-				<path location="${junit.location}"/>
+				<pathelement path="${bin.dir}"/>
+				<pathelement location="${junit.location}"/>
 			</classpath>
 			<compilerarg value="-Xlint"/>
 			<include name="**/*.java"/>
