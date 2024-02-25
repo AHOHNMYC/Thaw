@@ -17,9 +17,10 @@ jobs:
       run: |
         sudo sh -c "echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/force-unsafe-io"
         sudo apt-get -qq install junit > /dev/null
+        mkdir lib
+        ln -s /usr/share/java/junit.jar lib/junit.jar
     - name: Download dependencies
       run: |
-        mkdir lib
         REPO=https://repo1.maven.org/maven2/org
         wget $REPO/hsqldb/hsqldb/2.7.2/hsqldb-2.7.2.jar -qO lib/hsqldb.jar
         wget $REPO/bouncycastle/bcprov-lts8on/2.73.4/bcprov-lts8on-2.73.4.jar -qO lib/BouncyCastle.jar
